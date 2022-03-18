@@ -11,16 +11,16 @@ export default function ArrowLeftIcon({ className, ...props }) {
       <path
         d="M12.6667 8H3.33337"
         stroke="#3A59F3"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M8.00004 12.6667L3.33337 8.00004L8.00004 3.33337"
         stroke="#3A59F3"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

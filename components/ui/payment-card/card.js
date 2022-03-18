@@ -25,8 +25,8 @@ function CardCircle() {
           y2="-27.4389"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.279057" stop-color="#FC4D6D" />
-          <stop offset="1" stop-color="#FDA02F" />
+          <stop offset="0.279057" stopColor="#FC4D6D" />
+          <stop offset="1" stopColor="#FDA02F" />
         </linearGradient>
       </defs>
     </svg>
