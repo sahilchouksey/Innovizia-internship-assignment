@@ -1,0 +1,81 @@
+@import "../../styles/mixins.scss";
+.container {
+  overflow-x: hidden;
+  max-width: 1440px;
+  min-width: 440px;
+  margin: 6rem auto;
+  background: var(--main-background-color);
+
+  position: relative;
+  border-radius: 8px;
+
+  @include respond(laptop) {
+    border-radius: 0;
+    margin: 0;
+    max-width: unset;
+  }
+
+  --container-row-gap: 4rem;
+  --container-column-gap: 2rem;
+  --container-left-side-space: 2.25rem;
+  --container-right-side-space: 6.5rem;
+
+  display: grid;
+  column-gap: var(--container-column-gap);
+  row-gap: var(--container-row-gap);
+  grid-template-rows: var(--navbar-height) min-content;
+  grid-template-columns:
+    [full-start] minmax(var(--container-left-side-space), 1fr)
+    [center-start] repeat(10, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end] minmax(var(--container-right-side-space), 1fr) [full-end];
+
+  @include respond(tab-land) {
+    --container-left-side-space: 2rem;
+    --container-right-side-space: 2rem;
+  }
+
+  @include respond(tab-port) {
+    --container-left-side-space: 14px;
+    --container-right-side-space: 14px;
+  }
+
+  @include respond(phone) {
+    --container-left-side-space: 9px;
+    --container-right-side-space: 9px;
+  }
+}
+
+.header {
+  grid-column: center-start / center-end;
+  z-index: 1;
+
+  @include respond(phone) {
+    grid-column: full-start / full-end;
+  }
+  &-background {
+    // width: 100vw;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    height: var(--navbar-height);
+    background: var(--navigation-background-color);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    display: block;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.14);
+    z-index: 0;
+
+    @include respond(laptop) {
+      border-radius: 0;
+    }
+  }
+}
+
+.main {
+  grid-column: center-start / full-end;
+
+  @include respond(tab-land) {
+    grid-column: center-start / center-end;
+  }
+}

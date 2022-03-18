@@ -1,0 +1,21 @@
+@import "../../styles/mixins.scss";
+.main-section {
+  --title-text-color: #665f60;
+  --profile-box-size: calc(40% - 50px);
+  --side-padding: 4rem;
+  display: grid;
+  column-gap: 5rem;
+  grid-template-rows: min-content;
+  grid-template-columns: 60% var(--profile-box-size);
+
+  @include respond(tab-land) {
+    --side-padding: 3rem;
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 3rem;
+  }
+
+  @include respond(phone) {
+    --side-padding: 1.5rem;
+  }
+}

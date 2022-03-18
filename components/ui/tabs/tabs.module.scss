@@ -1,0 +1,66 @@
+.tabs {
+  width: 100%;
+  font-family: var(--bold-font);
+  font-size: var(--typo-text-x-small);
+  &-input {
+    display: none;
+    &:checked + .tabs-label .tabs-button::after {
+      opacity: 1;
+    }
+    &:checked + .tabs-label {
+      color: var(--color-secondary);
+    }
+    &:checked ~ .tabs-selected {
+      border-bottom: 2px solid var(--color-secondary);
+    }
+    &:checked + .tabs-label button {
+      border: 2px solid var(--color-secondary);
+    }
+  }
+
+  &-selected {
+    height: 4px;
+    border-bottom: 2px solid #848484;
+    transition: all 0.3s;
+    width: 100%;
+    display: inline-block;
+  }
+
+  &-label {
+    width: 100%;
+    display: flex;
+    color: #848484;
+    cursor: pointer;
+    position: relative;
+    padding-left: 3rem;
+  }
+
+  &-button {
+    height: 2.5rem;
+    width: 2.5rem;
+    // border: 5px solid #55c57a;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: -0.2rem;
+    left: 0;
+    &::after {
+      content: "";
+      height: 5px;
+      width: 5px;
+      background-color: var(--color-secondary);
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      -webkit-transition: opacity 0.2s;
+      -o-transition: opacity 0.2s;
+      transition: opacity 0.2s;
+    }
+  }
+}

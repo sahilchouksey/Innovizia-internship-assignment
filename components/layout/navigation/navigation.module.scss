@@ -1,0 +1,81 @@
+@import "../../../styles/mixins.scss";
+.navigation {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  @include respond(phone) {
+    padding: 0 12px;
+  }
+  &-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    & > * {
+      &:not(:first-child) {
+        margin-left: 2.25rem;
+
+        @include respond(phone) {
+          margin-left: 0;
+        }
+      }
+
+      &:last-child {
+        margin-left: 1.75rem;
+        @include respond(phone) {
+          margin-left: 0;
+        }
+      }
+    }
+
+    @include respond(tab-port) {
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  &-item {
+    &-search {
+      @include respond(tab-land) {
+        display: none;
+      }
+    }
+    &-more-options {
+    }
+    &-login {
+      @include respond(tab-port) {
+        display: none;
+      }
+    }
+    &-signup {
+      width: 7.2rem !important;
+      height: 3rem !important;
+    }
+  }
+}
+
+.logo {
+  @include respond(tab-port) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    & svg {
+      width: 20rem;
+      height: 5rem;
+    }
+  }
+
+  @include respond(phone) {
+    left: 45%;
+
+    & svg {
+      width: 15rem;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--color-gray-light);
+  border-radius: 54px;
+  width: 30rem;
+  height: 5.6rem;
+  padding: 4px 5px 4px 20px;
+}
+
+.search {
+  &_input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #222;
+    line-height: 15px;
+    letter-spacing: 0.16em;
+    text-transform: capitalize;
+
+    transition: all 0.3s;
+
+    &::placeholder,
+    &::-webkit-input-placeholder {
+      color: rgba(var(--color-gray-light), 0.25);
+    }
+  }
+
+  &_btn {
+    &,
+    &:link,
+    &:visited {
+      width: 6rem;
+      background: none;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: none;
+    }
+  }
+}

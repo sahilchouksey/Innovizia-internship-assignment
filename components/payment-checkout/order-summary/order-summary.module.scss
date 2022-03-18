@@ -1,0 +1,111 @@
+@import "../../../styles/mixins.scss";
+.order-summary {
+  position: relative;
+  padding: var(--side-padding);
+  grid-column: 2/-1;
+  background: rgba(234, 234, 234, 0.48);
+  margin-top: -4rem;
+
+  @include respond(tab-land) {
+    margin-top: 5rem;
+
+    background: var((--color-white));
+    box-shadow: -3px 4px 11px rgba(0, 0, 0, 0.18);
+    border-radius: 18px;
+  }
+  &-center-padding {
+    padding: 0 1.5rem;
+  }
+  &-header {
+    &-mobile {
+      display: none;
+      @include respond(tab-land) {
+        position: absolute;
+        top: -4.5rem;
+        left: 0;
+        display: flex;
+        align-items: center;
+      }
+    }
+    @include respond(tab-land) {
+      display: none;
+    }
+  }
+  &-heading {
+    &-text {
+      color: var(--title-text-color);
+      text-transform: uppercase;
+    }
+  }
+
+  &-profile {
+    @include respond(tab-land) {
+      margin-top: 0 !important;
+      padding: 0;
+    }
+    &-image {
+      width: 8rem;
+      height: 8rem;
+    }
+    &-details {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 1rem;
+    }
+    &-text {
+      font-weight: 600;
+    }
+  }
+
+  &-content {
+    &-time-date {
+      font-weight: 500;
+      @include respond(tab-land) {
+        padding: 0;
+      }
+      &-title,
+      &-timezone {
+        color: #8c8c8c;
+      }
+
+      &-timezone {
+        margin-top: 8px;
+      }
+    }
+    &-apply-coupon {
+      margin: 1.5rem 0;
+      &-input {
+        padding: 0 10px;
+        height: 3rem;
+        border-radius: 6px;
+        font-weight: 600;
+        line-height: 21px;
+        width: 60%;
+        outline: none;
+        appearance: none;
+        border: 1px solid transparent;
+        display: block;
+        background: var(--color-white);
+        transition: all 0.3s;
+        &:focus,
+        &:active {
+          border-color: var(--color-gray-light);
+        }
+      }
+    }
+    &-services-price {
+      &-light-text {
+        color: #8c8c8c;
+        font-weight: 500;
+      }
+      &-gray-text {
+        color: #6b6b6b;
+        font-weight: 600;
+      }
+      &-green-text {
+        color: #15c11c;
+        font-weight: 600;
+      }
+    }
+  }
+}
