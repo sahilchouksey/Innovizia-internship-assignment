@@ -91,6 +91,10 @@
         &:active {
           border-color: var(--color-gray-light);
         }
+
+        @include respond(tab-land) {
+          background: rgba(234, 234, 234, 0.48);
+        }
       }
     }
     &-services-price {
